@@ -1,3 +1,4 @@
+package ru.lesson.lessons;
 public class Calculator{
 
 	private int result;
@@ -6,6 +7,10 @@ public class Calculator{
 		for(Integer param : params){
 			this.result += param;
 		}	
+	}
+	
+	public void razn(int ... params){
+			this.result = params[0] - params[1];
 	}
 	
 	public int getResult(){

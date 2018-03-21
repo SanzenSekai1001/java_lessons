@@ -1,5 +1,5 @@
+package ru.lesson.lessons;
 import java.util.Scanner;
-
 /**
 	Класс для запуска калькулятора. Поддерживает ввод пользователя.
 */
@@ -15,7 +15,14 @@ public class InteractRunner{
 				String first = reader.next();
 				System.out.println("Enter second arg: ");
 				String second = reader.next();
-				calc.add(Integer.valueOf(first), Integer.valueOf(second));
+				System.out.println("Enter znak: ");
+				String znak = reader.next();
+				if(znak.equals("+")){
+					calc.add(Integer.valueOf(first), Integer.valueOf(second));
+				} else if(znak.equals("-")){
+					calc.razn(Integer.valueOf(first), Integer.valueOf(second));
+				} else System.out.println("No result");
+				
 				System.out.println("Result: " + calc.getResult());
 				calc.cleanResult();
 				System.out.println("Exit: yes/no");
